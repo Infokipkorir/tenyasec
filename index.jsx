@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
 // ─── SUPABASE CONFIG ────────────────────────────────────────────────
-// Replace these with your actual Supabase project credentials
-const SUPABASE_URL = "https://your-project.supabase.co";
-const SUPABASE_ANON_KEY = "your-anon-key-here";
+// Replace these with  actual Supabase project credentials
+const SUPABASE_URL = "sb_publishable_DOdFZ0eJm6Eh6QTiMcdD0A_iB1kRlPP";
+const SUPABASE_ANON_KEY = "https://ekvafnsqzklrvgnobetb.supabase.co";
 
 // ─── Minimal Supabase client ────────────────────────────────────────
 const supabase = {

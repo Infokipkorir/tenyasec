@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -434,12 +435,17 @@ function Toast({ msg, type, onClose }) {
    PUBLIC WEBSITE
    ═══════════════════════════════════════════════════ */
 const SERVICES = [
-  { icon:"🛡️", title:"Manned Guarding", desc:"Professional security officers trained to the highest standards — providing physical presence, deterrence, and rapid incident response for your premises around the clock." },
-  { icon:"📷", title:"CCTV & Surveillance", desc:"State-of-the-art surveillance systems with remote monitoring and AI-assisted analytics, ensuring comprehensive coverage of all critical areas." },
-  { icon:"🚗", title:"Mobile Patrols", desc:"Regular mobile patrol services providing cost-effective, visible security coverage across multiple sites with guaranteed rapid response times." },
-  { icon:"🔐", title:"Access Control", desc:"Advanced access management systems controlling and monitoring entry to sensitive areas while maintaining detailed, tamper-proof audit trails." },
-  { icon:"🔍", title:"Risk Assessment", desc:"Comprehensive security audits and vulnerability assessments to identify weaknesses and develop robust, layered mitigation strategies." },
-  { icon:"🏢", title:"Corporate Security", desc:"Executive protection, visitor management, and full-scale workplace security solutions tailored for corporate headquarters and branch environments." },
+  { icon:'<i class="bi bi-shield-check"></i>', title:"Manned Guarding", desc:"Professional security officers trained to the highest standards — providing physical presence, deterrence, and rapid incident response for your premises around the clock." },
+
+  { icon:'<i class="bi bi-camera-video"></i>', title:"CCTV & Surveillance", desc:"State-of-the-art surveillance systems with remote monitoring and AI-assisted analytics, ensuring comprehensive coverage of all critical areas." },
+
+  { icon:'<i class="bi bi-car-front"></i>', title:"Mobile Patrols", desc:"Regular mobile patrol services providing cost-effective, visible security coverage across multiple sites with guaranteed rapid response times." },
+
+  { icon:'<i class="bi bi-lock"></i>', title:"Access Control", desc:"Advanced access management systems controlling and monitoring entry to sensitive areas while maintaining detailed, tamper-proof audit trails." },
+
+  { icon:'<i class="bi bi-search"></i>', title:"Risk Assessment", desc:"Comprehensive security audits and vulnerability assessments to identify weaknesses and develop robust, layered mitigation strategies." },
+
+  { icon:'<i class="bi bi-building"></i>', title:"Corporate Security", desc:"Executive protection, visitor management, and full-scale workplace security solutions tailored for corporate headquarters and branch environments." },
 ];
 
 const CONTACT_INFO = [

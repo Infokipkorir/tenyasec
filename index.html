@@ -279,6 +279,103 @@
     .loading-pulse { animation: lpulse 1.4s ease-in-out infinite; }
     @keyframes lpulse { 0%,100%{opacity:0.35} 50%{opacity:0.85} }
     .divider { border: none; border-top: 1px solid var(--border-light); margin: 1.5rem 0; }
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Services</title>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* SECTION */
+.services {
+    padding:60px 20px;
+    text-align:center;
+}
+.services h2 {
+    font-size:32px;
+    margin-bottom:10px;
+}
+.services p {
+    color:#94a3b8;
+}
+
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+/* CARD */
+.card {
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    transition:0.3s;
+    text-align:left;
+    position:relative;
+    overflow:hidden;
+}
+
+/* ICON */
+.card i {
+    font-size:30px;
+    color:#22c55e;
+    margin-bottom:15px;
+}
+
+/* TITLE */
+.card h3 {
+    margin:0 0 10px;
+}
+
+/* DESC */
+.card p {
+    color:#cbd5f5;
+    font-size:14px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+    transform:translateY(-8px);
+    background:#334155;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* GLOW LINE */
+.card::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:#22c55e;
+    transform:scaleX(0);
+    transition:0.3s;
+}
+.card:hover::before {
+    transform:scaleX(1);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .services h2 {
+        font-size:24px;
+    }
+}
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -312,9 +409,6 @@
       .btn-primary, .btn-outline { text-align: center; justify-content: center; }
       .login-card { padding: 2rem 1.5rem; }
     }
-  </style>
-</head>
-<body>
 
 <!-- Loading Screen -->
 <div id="app-loader">
@@ -435,6 +529,7 @@ function Toast({ msg, type, onClose }) {
 /* ═══════════════════════════════════════════════════
    PUBLIC WEBSITE
    ═══════════════════════════════════════════════════ */
+// SERVICES DATA
 const SERVICES = [
   { icon:'<i class="bi bi-shield-check"></i>', title:"Manned Guarding", desc:"Professional security officers trained to the highest standards — providing physical presence, deterrence, and rapid incident response for your premises around the clock." },
 
@@ -448,6 +543,22 @@ const SERVICES = [
 
   { icon:'<i class="bi bi-building"></i>', title:"Corporate Security", desc:"Executive protection, visitor management, and full-scale workplace security solutions tailored for corporate headquarters and branch environments." },
 ];
+
+// RENDER CARDS
+const grid = document.getElementById("servicesGrid");
+
+SERVICES.forEach(service => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+        ${service.icon}
+        <h3>${service.title}</h3>
+        <p>${service.desc}</p>
+    `;
+
+    grid.appendChild(card);
+});
 
 const CONTACT_INFO = [
   { icon:"📍", label:"Headquarters", val:"Nairobi, Kenya — Serving All Regions" },

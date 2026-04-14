@@ -153,7 +153,25 @@ footer{background:#060d17;border-top:1px solid var(--border);padding:4rem 2rem 2
 </style>
 </head>
 <body>
+<--Loading page-->
+ <div id="app-loader">
+  <svg width="64" height="76" viewBox="0 0 64 76" fill="none">
+    <path d="M32 4L8 14V36C8 58 32 72 32 72C32 72 56 58 56 36V14L32 4Z" fill="rgba(201,168,76,0.12)" stroke="#C9A84C" stroke-width="1.5"/>
+    <path d="M24 36L30 42L42 30" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <p>Tenya Security Group</p>
+</div>
 
+<div id="root"></div>
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+const { useState, useEffect, useCallback, useRef } = React;
+</script>
 <!-- ── NAV ────────────────────────────────────────────────────── -->
 <nav>
   <div class="nav-inner">

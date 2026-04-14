@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+
+  <!-- Shield -->
+  <path d="M50 5 L85 20 V45 C85 70 70 90 50 98
+           C30 90 15 70 15 45 V20 Z" fill="#0d6efd"></path>
+
+  <!-- Inner glow -->
+  <path d="M50 12 L78 25 V45 C78 65 66 80 50 88
+           C34 80 22 65 22 45 V25 Z" fill="rgba(255,255,255,0.15)"></path>
+
+  <!-- TSG Text -->
+  <text x="50" y="62" text-anchor="middle" font-size="24" font-weight="bold" fill="white" font-family="Arial, sans-serif">
+    TSG
+  </text>
+
+</svg>

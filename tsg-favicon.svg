@@ -1,16 +1,1 @@
-<link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-  <path d='M50 5 L85 20 V45 C85 70 70 85 50 95
-           C30 85 15 70 15 45 V20 Z'
-        fill='%230d6efd'/>
 
-  <text x='50' y='60'
-        text-anchor='middle'
-        font-size='26'
-        font-weight='bold'
-        fill='white'
-        font-family='Arial'>
-    TSG
-  </text>
-</svg>">

@@ -10,7 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+   <!-- in index.html <head> -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -445,7 +449,7 @@ const SERVICES = [
 
 const CONTACT_INFO = [
   { icon:"📍", label:"Headquarters", val:"Nyamira, Kenya — Serving All Regions" },
-  { icon:"📞", label:"Emergency Line", val:"+254 100 614724 (24/7)" },
+  { icon:"📞", label:"Emergency Line", val:"+254 742395857 (24/7)" },
   { icon:"✉️", label:"Email", val:"tenyasecure@gmail.com" },
   { icon:"🕐", label:"Operations", val:"24/7 · 365 days a year" },
 ];
@@ -521,13 +525,18 @@ function PublicWebsite({ onAdminClick }) {
       </section>
 
       {/* STATS */}
-      <div className="stats-bar">
-        <div className="stats-inner">
-          {[["500+","Clients Protected"],["24/7","Round-the-Clock Coverage"],["15+","Years of Excellence"],["1,200+","Security Personnel"]].map(([n,l]) => (
-            <div className="stat-item" key={l}><div className="stat-num">{n}</div><div className="stat-label">{l}</div></div>
-          ))}
-        </div>
-      </div>
+<div className="stats-bar">
+  <div className="stats-inner">
+    {[
+      ["10+",   "Clients Protected"],
+      ["24/7",  "Round-the-Clock Coverage"],
+      ["2+",    "Years of Excellence"],
+      ["12+",   "Security Personnel"],
+    ].map(([n, l]) => (
+      <StatItem key={l} num={n} label={l} />
+    ))}
+  </div>
+</div>
 
       {/* SERVICES */}
       <section className="section" id="services">
@@ -557,9 +566,17 @@ function PublicWebsite({ onAdminClick }) {
               <p>Tenya Security Group Ltd was established with a singular vision: to raise the standard of security services in Kenya. We believe true security goes beyond physical barriers — it begins with integrity.</p>
               <p>Our team of certified professionals brings decades of combined experience in military, law enforcement, and private security. Every officer undergoes rigorous vetting, comprehensive training, and continuous professional development.</p>
               <div className="about-certs">
-                {[["","Certified Quality"],["NIS","Licensed & Regulated"],["PSIRA","Accredited Members"]].map(([c,d]) => (
-                  <div className="cert-item" key={c}><div className="cert-name">{c}</div><div className="cert-label">{d}</div></div>
-                ))}
+           {[
+           ["", "Certified Quality"],
+    ["NIS", "Licensed & Regulated"],
+    ["PSIRA", "Accredited Members"],
+  ].map(([c, d]) => (
+    <div className="cert-item" key={d}>
+      {c && <div className="cert-name">{c}</div>}
+      <div className="cert-label">{d}</div>
+    </div>
+  ))}
+</div>
               </div>
             </div>
             <div className="about-values">
@@ -629,22 +646,45 @@ function PublicWebsite({ onAdminClick }) {
             <p>Providing integrated security solutions with unwavering commitment to integrity and excellence across Kenya and East Africa since 2009.</p>
           </div>
           <div className="footer-col">
-            <h4>Services</h4>
-            {["Manned Guarding","CCTV & Surveillance","Mobile Patrols","Access Control","Risk Assessment","Corporate Security"].map(s=><a key={s}>{s}</a>)}
-          </div>
-          <div className="footer-col">
-            <h4>Company</h4>
-            {["About Us","Our Team","Certifications","Careers","News & Insights","Privacy Policy"].map(s=><a key={s}>{s}</a>)}
-          </div>
-          <div className="footer-col">
-            <h4>Follow Us</h4>
-            {["LinkedIn","Facebook","Twitter / X","Instagram","YouTube"].map(s=><a key={s}>{s}</a>)}
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p className="footer-copy">© 2024 Tenya Security Group Ltd. All rights reserved. · Integrity With Excellence</p>
-          <button className="admin-trigger" onClick={onAdminClick}>Admin Portal →</button>
-        </div>
+  <h4>Services</h4>
+  {[
+    ["bi-person-badge",    "Manned Guarding"],
+    ["bi-camera-video",    "CCTV & Surveillance"],
+    ["bi-car-front",       "Mobile Patrols"],
+    ["bi-door-locked",     "Access Control"],
+    ["bi-shield-check",    "Risk Assessment"],
+    ["bi-building",        "Corporate Security"],
+  ].map(([icon, s]) => (
+    <a key={s}><i className={`bi ${icon} me-2`} />{s}</a>
+  ))}
+</div>
+
+<div className="footer-col">
+  <h4>Company</h4>
+  {[
+    ["bi-info-circle",     "About Us"],
+    ["bi-people",          "Our Team"],
+    ["bi-patch-check",     "Certifications"],
+    ["bi-briefcase",       "Careers"],
+    ["bi-newspaper",       "News & Insights"],
+    ["bi-lock",            "Privacy Policy"],
+  ].map(([icon, s]) => (
+    <a key={s}><i className={`bi ${icon} me-2`} />{s}</a>
+  ))}
+</div>
+
+<div className="footer-col">
+  <h4>Follow Us</h4>
+  {[
+    ["bi-linkedin",        "LinkedIn"],
+    ["bi-facebook",        "Facebook"],
+    ["bi-twitter-x",       "Twitter / X"],
+    ["bi-instagram",       "Instagram"],
+    ["bi-youtube",         "YouTube"],
+  ].map(([icon, s]) => (
+    <a key={s}><i className={`bi ${icon} me-2`} />{s}</a>
+  ))}
+</div>
       </footer>
     </>
   );
@@ -692,6 +732,35 @@ function AdminLogin({ onLogin, onBack }) {
           <button type="button" onClick={onBack} style={{ width:"100%", marginTop:"0.75rem", background:"transparent", border:"none", color:"var(--text-muted)", fontSize:"0.8rem", cursor:"pointer", padding:"8px" }}>← Back to website</button>
         </form>
       </div>
+    </div>
+  );
+} import { useEffect, useRef, useState } from "react";
+
+function StatItem({ num, label }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      className="stat-item"
+      ref={ref}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(24px)",
+        transition: "opacity 0.6s ease, transform 0.6s ease",
+      }}
+    >
+      <div className="stat-num">{num}</div>
+      <div className="stat-label">{label}</div>
     </div>
   );
 }

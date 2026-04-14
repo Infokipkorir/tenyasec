@@ -308,7 +308,7 @@ footer{background:#060d17;border-top:1px solid var(--border);padding:4rem 2rem 2
       <div>
         <div class="form-row">
           <div class="form-group"><label>Full Name *</label><input id="fname" type="text" placeholder="Your full name"></div>
-          <div class="form-group"><label>Email Address *</label><input id="femail" type="email" placeholder="your@email.com"></div>
+          <div class="form-group"><label>Email Address *</label><input id="femail" type="email" placeholder="tenyasecure@gmail.com@email.com"></div>
         </div>
         <div class="form-row">
           <div class="form-group"><label>Phone Number</label><input id="fphone" type="tel" placeholder="+254 ..."></div>
@@ -362,10 +362,15 @@ footer{background:#060d17;border-top:1px solid var(--border);padding:4rem 2rem 2
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 Tenya Security Group Ltd. All rights reserved. | Integrity With Excellence</p>
-    <a href="admin.html" class="admin-link">Admin Portal <i class="bi bi-arrow-right"></i></a>
-  </div>
+<div class="footer-bottom">
+  <small>
+    &copy; <span id="year"></span> Tenya Security Group Ltd. All rights reserved. | Integrity With Excellence
+  </small>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </footer>
 
 <div id="toast" class="toast" style="display:none"></div>
